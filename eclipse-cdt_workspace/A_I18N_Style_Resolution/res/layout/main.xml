@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+         />
+
+    	<ImageButton  android:src="@drawable/exit"
+    	    	 android:layout_width="200dip" android:layout_height="100dip" 
+    	    	android:contentDescription="@string/exit"/>
+    	<!-- 复制layout目录为layout-480x320,layout-320x240  ,注意大数字放在前面, 
+start...按钮启动模拟器时,会提示HVGA(320x480),QVGA(240x320) -->
+</LinearLayout>

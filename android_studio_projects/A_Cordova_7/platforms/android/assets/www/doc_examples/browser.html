@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf8"> 
+    <title>Battery Status</title>
+
+      <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css" />
+      <script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+      <script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
+      <!-- jquery.mobile-1.4.5 不支持jQuery-3  -->
+ 
+ 
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function out(txt)
+    {
+    	var pre=document.getElementById("textOut").innerHTML;
+    	document.getElementById("textOut").innerHTML=pre+"<br/>"+txt;
+    }
+    
+	function myCallback(event){
+		 alert(event.url); 
+	}
+    function openBrowser(txt)
+     {
+    	var ref = window.open('http://apache.org', '_blank', 'location=yes');//全屏新的
+    	ref.addEventListener('loadstart', function(event) { alert(event.url); });////点新的链接时(不包含图片,JS,CSS)
+    	
+    	/*
+    	//全屏不好加按钮
+    	var ref = window.open('http://apache.org', '_blank', 'location=yes');
+    	var myCallback = function(event) { 
+	    		alert(event.url); 
+	    		ref.insertCSS({file: "mystyles.css"});
+	    		ref.executeScript({file: "myscript.js"});
+    		}
+    	ref.show();
+    	ref.addEventListener('loadstart', myCallback);
+    	ref.removeEventListener('loadstart', myCallback);
+    	ref.close();
+    	*/
+     }
+    </script>
+  </head>
+  <body>
+    <p id="textOut">waiting log</p>
+    
+     <button onclick="openBrowser()">openBrowser</button> <br/>
+      
+     <button onclick="history.back()">go back</button>
+      
+  </body>
+</html>

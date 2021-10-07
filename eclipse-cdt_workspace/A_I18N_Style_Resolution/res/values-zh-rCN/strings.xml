@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">你好, A_I18N_StyleActivity!</string>
+    <string name="app_name">国际化_样式</string>
+	<string name="exit">单击退出</string>
+</resources>

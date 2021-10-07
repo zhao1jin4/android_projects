@@ -1,0 +1,212 @@
+
+buildscript {
+    repositories {
+        mavenLocal()
+        //mavenCentral()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
+    dependencies {
+        classpath group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+    }
+}
+
+/*
+buildscript //看源码文档参数是 ScriptHandler
+{
+    ScriptHandler scriptHandler ->
+        scriptHandler.repositories { //看源码文档参数是 RepositoryHandler
+            RepositoryHandler repositories ->
+            repositories.mavenLocal()
+            repositories.maven {
+                name 'dev'
+                url 'http://maven.aliyun.com/nexus/content/groups/public/'
+                credentials {
+                      username = 'joe'
+                      password = 'secret'
+                 }
+            }
+            repositories.jcenter()
+        }
+}
+*/
+
+allprojects
+{
+    apply plugin: 'java'
+
+    group 'org.example'
+    version '1.0-SNAPSHOT'
+
+    sourceCompatibility = 1.8
+    repositories {
+        mavenLocal()
+        //mavenCentral()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
+
+    dependencies {
+//    testCompile group: 'junit', name: 'junit', version: '4.12'
+        testCompile 'junit:junit:4.12'
+        compile group: 'org.springframework', name: 'spring-context', version: '5.2.3.RELEASE'
+        compile('org.apache.commons:commons-lang3:3.8.1'){//写法不能是group:''
+                exclude group:'junit' ,module:'junit'
+
+           }
+    }
+}
+
+task mycmd{
+    doLast
+    {
+        exec{
+            try{
+                //executable 'bash'
+                //args '-c' 'ls -l /tmp'
+                //windows命令测试成功
+                executable 'cmd'
+                args '/c','dir d:'
+
+            }catch(GradleException e)
+            {
+                println e.getMessage()
+            }
+        }
+    }
+}
+//tasks.findByName('')
+tasks.create(name:'myTask'){
+    setGroup('myGroup')
+    setDescription("myDescription")
+    println 'myTask'
+}
+task myTask2(group:'myGroup2',description:'desc 2'){
+    println 'myTask2 '
+    doLast {
+        println 'myTask2  doLast 1'
+    }
+    doFirst{
+        println 'myTask2  doFirst 1'
+    }
+}
+myTask2.doLast {
+    println 'myTask2  doLast 2'
+}
+myTask2.doFirst{
+    println 'myTask2  doFirst 2'
+}
+
+
+
+import org.apache.commons.lang3.StringUtils
+import org.xx.MyDefaultTask
+//import org.xx.MyPlugin
+//apply plugin : MyPlugin
+apply plugin: 'org.xx'
+
+
+
+if( StringUtils.isNoneBlank(""))
+{
+
+}
+
+beforeEvaluate {
+    println "my beforeEvaluate"
+}
+
+
+
+gradle.buildFinished { //所有生命周期执行完
+ println(" my buildFinished")
+}
+gradle.beforeProject {
+    println(" my beforeProject")
+}
+gradle.afterProject {
+    println(" my afterProject")
+}
+this.getAllprojects().eachWithIndex { Project project, int i ->
+    if(i==0){
+        println "===root project ${project.name}"
+    }else
+    {
+        println "-project ${project.name}"
+    }
+}
+println("ROOT PROJECT ${this.rootProject.name}")
+
+project("web") {//参数为项目名
+    Project project->
+        //为指定模块做配置
+        apply plugin: 'java'
+        println "web project name=${project.name}"
+}
+
+
+println project("web").group  //来测试
+
+subprojects {//不包括父项目
+    Project project ->
+    if(project.plugins.hasPlugin("com.android.library"))
+    {
+        apply from: '../myCommon.gralde'
+    }
+
+
+}
+//apply from: file('myCommonExt.gradle')
+apply from: './myCommonExt.gradle' //引用配置
+println project("web").minSdkVersion
+
+println "the root isLoadTest====${isLoadTest}"
+
+
+
+task ("myTaskA"){
+    println 'config myTaskA'
+    doLast {
+        println 'exec myTaskA'
+    }
+}
+
+task ("myTaskB"){
+    mustRunAfter "myTaskA"
+    println 'config myTaskB'
+    doLast {
+        println 'exec myTaskB'
+    }
+}
+myExtension{
+//    sub{ //加子就不行？？？
+//        user '123'
+//    }
+    department   'IT'  //可用=或空格分隔
+
+}
+task myDefTask(type: MyDefaultTask) {
+
+}
+
+
+
+sourceSets {
+    main {
+        java {
+            exclude 'some/unwanted/package/**'
+        }
+    }
+}
+
+/*
+//android 输出so文件默认输出目录为jni/libs 修改为libs
+android.sourceSets {
+    main{
+        jniLibs.srcDirs=['libs']
+    }
+}
+
+android.sourceSets {
+    main{
+        res.srcDirs=['src/main/res','src/main/res-icon']
+    }
+}*/

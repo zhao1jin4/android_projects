@@ -1,0 +1,70 @@
+apply plugin: 'java'
+
+//plugins {
+//    id 'maven-publish'
+//}
+apply plugin: 'maven-publish' //idea工具Gradle视图会多出publishing组,有任务publishToMavenLocal
+//apply plugin: 'java-library'
+//apply plugin: 'signing'
+
+
+apply plugin: 'java'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+task('hello')
+{
+    println "hello"
+}
+
+
+
+task sourcesJar(type: Jar) { //执行生成<project>/build/libs/<project>-<version>.jar
+    from sourceSets.main.allJava
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar) { //中文乱码
+    from javadoc
+    classifier = 'javadoc'
+}
+
+
+//没用???
+javadoc {
+    // <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    // 防止本地打开中文乱码
+    options.addStringOption("charset", "UTF-8")
+}
+
+
+/* */
+publishing {
+    publications {
+        maven(MavenPublication) {
+            // groupId = project.group
+            // artifactId = project.name
+            // version = project.version
+            //如果不定义，则会按照以上默认值执行
+            groupId = 'org.example'
+            artifactId = 'my-example'
+            version = '1.0-SNAPSHOT'
+
+            from components.java
+
+            artifact sourcesJar //要在前面定义
+            artifact javadocJar
+        }
+    }
+
+    repositories {
+        maven {
+            url = "http://127.0.0.1:8081/repository/maven-snapshots/" //maven-snapshots的地址,要求版本以-SNAPSHOT结尾
+            credentials {
+                username = 'admin'
+                password = 'admin123'
+            }
+        }
+    }
+}

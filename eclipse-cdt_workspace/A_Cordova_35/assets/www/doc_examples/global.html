@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf8"> 
+    <title>Battery Status</title>
+    
+<link rel="stylesheet" href="../css/jquery.mobile-1.4.3.css" />
+<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.4.3.js"></script>
+ 
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function out(txt)
+    {
+    	var pre=document.getElementById("textOut").innerHTML;
+    	document.getElementById("textOut").innerHTML=pre+"<br/>"+txt;
+    }
+    function showLanguage()
+    {
+    	 navigator.globalization.getPreferredLanguage(
+    	    	    function (language) {alert('language: ' + language.value + '\n');},
+    	    	    function () {alert('Error getting language\n');}
+    	    	);//zh-CN
+    }
+   
+  function showNow() {
+	   
+	   navigator.globalization.dateToString(
+			    new Date(),
+			    function (date) { alert('date: ' + date.value + '\n'); },
+			    function () { alert('Error getting dateString\n'); },
+			    { formatLength: 'short', selector: 'date and time' }
+			);
+	   
+   }
+  
+  function showPattern(){
+	  navigator.globalization.getCurrencyPattern(
+			    'USD',
+			    function (pattern) {
+			        alert('pattern: '  + pattern.pattern  + '\n' +
+			              'code: '     + pattern.code     + '\n' +
+			              'fraction: ' + pattern.fraction + '\n' +
+			              'rounding: ' + pattern.rounding + '\n' +
+			              'decimal: '  + pattern.decimal  + '\n' +
+			              'grouping: ' + pattern.grouping);
+			    },
+			    function () { alert('Error getting pattern\n'); }
+			);
+	  
+  }
+
+  function showNumberPattern() 
+  {
+ 	 
+ 	 navigator.globalization.getNumberPattern(
+ 			    function (pattern) {alert('pattern: '  + pattern.pattern  + '\n' +
+ 			                              'symbol: '   + pattern.symbol   + '\n' +
+ 			                              'fraction: ' + pattern.fraction + '\n' +
+ 			                              'rounding: ' + pattern.rounding + '\n' +
+ 			                              'positive: ' + pattern.positive + '\n' +
+ 			                              'negative: ' + pattern.negative + '\n' +
+ 			                              'decimal: '  + pattern.decimal  + '\n' +
+ 			                              'grouping: ' + pattern.grouping);},
+ 			    function () {alert('Error getting pattern\n');},
+ 			    {type:'decimal'}
+ 			);
+  }
+  function showMonth()
+  {
+	  navigator.globalization.getDateNames(
+			    function (names) {
+			        for (var i = 0; i < names.value.length; i++) {
+			            alert('month: ' + names.value[i] + '\n');
+			        }
+			    },
+			    function () { alert('Error getting names\n'); },
+			    { type: 'wide', item: 'months' }
+			);
+  }
+  
+  function checkDatePattern() {
+	    navigator.globalization.getDatePattern(
+	        function (date) { alert('pattern: ' + date.pattern + '\n'); },
+	        function () { alert('Error getting pattern\n'); },
+	        { formatLength: 'short', selector: 'date and time' }
+	    );//short 是 yyyy-M-d HH:mm
+	}
+	
+ function stringToDate() 
+ {
+	 //用getDatePattern
+	 navigator.globalization.stringToDate(
+			    '2014-12-24',
+			    function (date) {alert('month:' + date.month +
+			                           ' day:'  + date.day   +
+			                           ' year:' + date.year  + '\n');},
+			    function () {alert('Error getting date\n');},
+			    {selector: 'date'}
+			);
+ }
+ 
+ function showFirstDayOfWeek() {
+	  
+	  navigator.globalization.getFirstDayOfWeek(
+			    function (day) {alert('day: ' + day.value + '\n');},
+			    function () {alert('Error getting day\n');}
+			);
+  }
+  
+ 
+    </script>
+  </head>
+  <body>
+    <p id="textOut">waiting log</p>
+    
+    
+     <button onclick="showLanguage()">showLanguage</button> <br/>
+      <button onclick="showNow()">showNow</button> <br/>
+      <button onclick="showPattern()">showPattern</button> <br/>
+      <button onclick="showMonth()">showMonth</button> <br/>
+      <button onclick="checkDatePattern()">checkDatePattern</button> <br/>
+      <button onclick="showFirstDayOfWeek()">showFirstDayOfWeek</button> <br/>
+      <button onclick="showNumberPattern()">showNumberPattern</button> <br/>
+      <button onclick="stringToDate()">stringToDate</button> <br/>
+      
+      
+     <button onclick="history.back()">go back</button>
+      
+  </body>
+</html>

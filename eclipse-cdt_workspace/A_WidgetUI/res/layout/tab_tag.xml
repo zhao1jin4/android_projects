@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/myTabhost"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+	   	 android:layout_height="fill_parent"
+	   	 android:orientation="vertical" >
+	    <TabWidget  android:id="@android:id/tabs"
+	        android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content">
+	    </TabWidget>
+	    <FrameLayout  android:id="@android:id/tabcontent"
+	        android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content">
+	        
+	        <LinearLayout  android:id="@+id/page1"
+	            android:layout_width="fill_parent"
+	    		android:layout_height="wrap_content">
+				<TextView
+				    android:layout_width="fill_parent"
+	    			android:layout_height="wrap_content" 
+				    android:text="这是第一111个标签页"/>            
+	        </LinearLayout>
+	        
+	         <LinearLayout android:id="@+id/page2"
+	            android:layout_width="fill_parent"
+	    		android:layout_height="wrap_content">
+				<TextView 
+				    android:layout_width="fill_parent"
+	    			android:layout_height="wrap_content"
+	    			android:text="这是第二222个标签页"/>            
+	        </LinearLayout>
+	    </FrameLayout>
+    </LinearLayout>
+</TabHost>
+
+

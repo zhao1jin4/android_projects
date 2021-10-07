@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+    </ScrollView>
+  -->   
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:scrollbars="vertical" >
+     
+   <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:background="@drawable/text_background_9patch"
+         android:text="小图"
+        />
+   <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:background="@drawable/text_background_9patch"
+          android:text="这是一个自动缩放的背景图片"  />
+
+   <ImageView
+       android:id="@+id/layer_img"
+       android:layout_width="48dp"
+       android:layout_height="70dp"
+       android:src="@drawable/layer_list" />
+
+   <ImageView
+       android:id="@+id/level_img"
+       android:layout_width="59dp"
+       android:layout_height="63dp"
+       android:src="@drawable/level_list" />
+   
+   <Button android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+        android:text="切换"  
+        android:onClick="swith"
+        android:background="@drawable/selector"/>
+    <!-- background="@drawable/selector　是xml文件 -->
+   <!-- 调用自己Activity类中的方法名  public void swith(View v) -->
+   
+    <Button
+        android:id="@+id/button_transaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/transition"
+        android:onClick="transaction"
+        android:text="单击看transaction_clip"
+        android:textColor="@color/solid_red" />
+        <ImageView
+        android:id="@+id/clip_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/clip" />
+    
+     <ImageView
+        android:id="@+id/scale_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/scale" />
+
+     <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:background="@drawable/shape"
+         android:text="这是一个按钮" />
+
+</LinearLayout>

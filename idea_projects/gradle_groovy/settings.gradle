@@ -1,0 +1,9 @@
+rootProject.name = 'mygroovy'
+include 'childTwo'
+include 'web'
+if(hasProperty('isLoadTest')?isLoadTest.toBoolean():false)
+    println "has LOADTEST"
+else
+    println "NO LOADTEST"
+
+

@@ -1,0 +1,9 @@
+要生成keystore并保存下来
+keytool -genkey -alias lisi      -keystore C:/temp/clientKeystore  -dname "CN=lisi,OU=tcs,O=tata,L=Harbin,ST=HeiLongJian,C=CN"     -keypass lisikeypass     --storepass clientkeystorepass
+keytool -list -v -keystore C:/temp/clientKeystore -storepass clientkeystorepass 来查看  SHA1的值  C9:68:E9:39:60:40:B5:43:03:F4:A5:4A:66:8B:69:3E:59:55:85:3D
+
+示例的包名要固定 org.zhaojin.baiduMap
+
+public static final String strKey = "";
+
+申请key失败???

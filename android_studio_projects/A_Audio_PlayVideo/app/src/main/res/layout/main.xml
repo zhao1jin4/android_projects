@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:orientation="vertical" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:background="#ffffff"
+    > 
+    <TextView    
+    android:layout_width="fill_parent"   
+    android:layout_height="wrap_content"   
+    android:text="有录音功能" 
+    /> 
+    <Button
+        android:id="@+id/audioChangeButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="音量设置" />
+  
+	  <Button 
+	    android:id="@+id/batteryButton" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="查看电量"/>
+  
+    <Button 
+    android:id="@+id/start" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="开始播放MP3"/> 
+    <Button 
+    android:id="@+id/stop" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="停止播放MP3"     
+    /> 
+    
+    <Button 
+    android:id="@+id/playVideo" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="播放视频"     
+    />
+  
+    
+</LinearLayout> 

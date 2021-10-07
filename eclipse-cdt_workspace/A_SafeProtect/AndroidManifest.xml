@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.zhaojin.a_safeprotect"
+    android:versionCode="1"
+    android:versionName="1.0"
+    
+    android:sharedUserId="android.uid.system" > <!-- 为关机 -->
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+
+
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> 
+
+	<!-- 如eclipse有报错,project -> clean  -->
+	<uses-permission android:name="android.permission.SHUTDOWN"  />
+	<uses-permission android:name="android.permission.DEVICE_POWER" />
+	<uses-permission android:name="android.permission.REBOOT"/>
+
+ 
+ 
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="org.zhaojin.a_safeprotect.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <service  android:name=".TestService" />
+        
+         <receiver android:name=".Alarmreceiver"/>
+        <receiver android:name=".BootBroadcastReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
+		
+    </application>
+
+</manifest>

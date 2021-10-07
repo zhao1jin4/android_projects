@@ -1,0 +1,7 @@
+到自己的项目目录,运行ndk-build,(会读<>/jni/Android.mk文件)会生成目录obj,libs,
+有libs/armeabi/libxxx.so,gdbserver文件,gdb.setup文件
+eclipse ADT打包后的apk包中是在lib/armeabi/目录下(是lib没有s),中只有libxxx.so,gdbserver的文件
+
+
+
+

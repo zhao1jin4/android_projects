@@ -1,0 +1,133 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+<RelativeLayout    android:layout_width="fill_parent" android:layout_height="fill_parent" >
+	
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:text="渐强铃声"
+        tools:context=".MainActivity" />
+    
+     <Button
+        android:id="@+id/vibrateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView1"
+        android:layout_centerHorizontal="true"
+        android:text="Vibrate测试_OK"
+        tools:context=".MainActivity" />
+
+    <Button
+        android:id="@+id/blueToothButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vibrateButton"
+        android:layout_centerHorizontal="true"
+        android:text="蓝牙测试_OK"
+        tools:context=".MainActivity" />
+           
+    <Button
+        android:id="@+id/wifiButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blueToothButton"
+        android:layout_centerHorizontal="true"
+        android:text="Wifi连接测试_OK"
+        tools:context=".MainActivity" />
+  	
+  	<Button
+          android:id="@+id/dragButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/wifiButton"
+          android:layout_centerHorizontal="true"
+          android:text="多点触模_OK" />
+  
+      
+    <Button
+        android:id="@+id/locationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dragButton"
+        android:layout_centerHorizontal="true"
+        android:text="定位测试,模拟器不可速度测试_GPS-OK"
+        tools:context=".MainActivity" />
+    
+       <Button
+        android:id="@+id/cameraPhotoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/locationButton"
+        android:text="拍照_Mac模拟器上不能用_" />
+    
+    <Button
+        android:id="@+id/cameraRecordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/cameraPhotoButton"
+        android:text="录像_Mac模拟器上不能用_只能后摄像头" />
+    
+       <Button
+        android:id="@+id/sensorAcceleroButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/cameraRecordButton"
+        android:text="加速度" />
+	
+    <Button
+        android:id="@+id/sensorLightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/sensorAcceleroButton"
+        android:text="灯光" />
+    
+	<Button
+        android:id="@+id/sensorProximityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/sensorLightButton"
+        android:text="近距离感应" />
+	
+	<Button android:id="@+id/basicGLButton" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		 android:layout_below="@id/sensorProximityButton"
+		android:text="基本OpenGL ES 2.0测试" />
+     
+	<Button android:id="@+id/poweroffAlarmButton" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		 android:layout_below="@id/basicGLButton"
+		android:text="闹钟_定时关机" />
+	
+	<EditText  android:id="@+id/editText1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/poweroffAlarmButton"
+			android:text="因使用了ScrollView,在下方时键盘不会当住的" />
+
+      <Button
+        android:id="@+id/exitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText1"
+        android:layout_centerHorizontal="true"
+        android:text="退出"
+        tools:context=".MainActivity" />
+
+    
+
+</RelativeLayout>
+
+</ScrollView>

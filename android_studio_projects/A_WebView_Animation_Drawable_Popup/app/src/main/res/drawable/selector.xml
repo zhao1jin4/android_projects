@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:state_enabled="true" android:drawable="@drawable/button_selected" /> 
+	<!--  只有当两个条件同时成立时才应用，即当组件按下&& 组件是可用的　显示对应的图片　 -->
+    <item android:state_selected="false"  android:drawable="@drawable/button_normal" /> 
+    <item android:drawable="@drawable/button_normal" /> <!-- 默认的要放在最后面 -->
+    <!-- 文档API Guids->App Resources->resources Types->Drawable   state list 有还有很多其它状态-->
+</selector>

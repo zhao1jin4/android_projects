@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf8"> 
+    <title>Acceleration Example</title>
+
+      <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css" />
+      <script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+      <script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
+      <!-- jquery.mobile-1.4.5 不支持jQuery-3  -->
+ 
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+    }
+
+    // onSuccess: Get a snapshot of the current acceleration
+    //
+    function onSuccess(acceleration) {
+        alert('Acceleration X: ' + acceleration.x + '\n' +
+              'Acceleration Y: ' + acceleration.y + '\n' +
+              'Acceleration Z: ' + acceleration.z + '\n' +
+              'Timestamp: '      + acceleration.timestamp + '\n');
+    }
+
+    // onError: Failed to get the acceleration
+    //
+    function onError() {
+        alert('onError!');
+    }
+
+    </script>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p>getCurrentAcceleration</p>
+      
+       <button onclick="history.back()"style="height:100px;font-size:50px">go back</button>
+  </body>
+</html>

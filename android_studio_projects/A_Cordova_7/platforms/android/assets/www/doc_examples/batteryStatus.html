@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf8"> 
+    <title>Battery Status</title>
+
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function out(txt)
+    {
+    	var pre=document.getElementById("textOut").innerHTML;
+    	document.getElementById("textOut").innerHTML=pre+"<br/>"+txt;
+    }
+    
+    window.addEventListener("batterystatus", onBatteryStatus, false);
+    function onBatteryStatus(info) {
+    	out("Level: " + info.level + " isPlugged: " + info.isPlugged);
+        console.log("Level: " + info.level + " isPlugged: " + info.isPlugged);
+    }
+    
+    window.addEventListener("batterycritical", onBatteryCritical, false);
+    function onBatteryCritical(info) {
+    	out("Battery Level Critical " + info.level + "%\nRecharge Soon!");
+        alert("Battery Level Critical " + info.level + "%\nRecharge Soon!");
+    }
+    
+    window.addEventListener("batterylow", onBatteryLow, false);
+    function onBatteryLow(info) {
+        out("Battery Level Low " + info.level + "%");
+        alert("Battery Level Low " + info.level + "%");
+    }
+    
+    </script>
+  </head>
+  <body>
+    <p id="textOut">waiting battery change</p>
+    
+     <button onclick="history.back()">go back</button>
+      
+  </body>
+</html>

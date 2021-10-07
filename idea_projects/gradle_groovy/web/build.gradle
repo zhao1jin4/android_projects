@@ -1,0 +1,16 @@
+plugins {
+    id 'war'
+}
+dependencies{
+    compile project(":childTwo")
+}
+
+println "the web isLoadTest====${isLoadTest}"
+
+ fileTree('build/classes'){
+    FileTree fileTree->
+         fileTree.visit {
+            FileTreeElement element->
+            println "filename=${element.file.absolutePath}"
+         }
+ }

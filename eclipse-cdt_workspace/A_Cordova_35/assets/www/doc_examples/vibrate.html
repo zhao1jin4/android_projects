@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf8"> 
+    <title>Battery Status</title>
+
+<link rel="stylesheet" href="../css/jquery.mobile-1.4.3.css" />
+<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.4.3.js"></script>
+ 
+ 
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function out(txt)
+    {
+    	var pre=document.getElementById("textOut").innerHTML;
+    	document.getElementById("textOut").innerHTML=pre+"<br/>"+txt;
+    }
+    function beginSingleVibrate()
+    {
+    	navigator.notification.vibrate(1500);
+    }
+    function beginPatternVibrate()
+    {
+    	//wait时间,vibrate时间,.....
+    	navigator.notification.vibrateWithPattern([100, 500,1000, 2000] , 3);//重复3次
+    }
+    function stopVibrate()
+    {
+    	navigator.notification.cancelVibration();
+    }
+    
+    </script>
+  </head>
+  <body>
+    <p id="textOut">waiting log</p>
+    
+    
+     <button onclick="beginSingleVibrate()">beginSingleVibrate</button> <br/>
+     <button onclick="beginPatternVibrate()">beginPatternVibrate</button> <br/>
+     <button onclick="stopVibrate()">stopVibrate</button> <br/>
+      
+     <button onclick="history.back()">go back</button>
+      
+  </body>
+</html>
