@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list  xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item> <!-- 最上面的显示在最底下 -->
+      	<bitmap android:src="@drawable/album"  android:gravity="center" />
+    </item>
+    <item
+        android:drawable="@drawable/user"
+        android:id="@+id/photo"
+        android:top="68dp"
+        android:right="18dp"
+        android:bottom="22dp"
+        android:left="18dp" />
+</layer-list>
+

@@ -38,10 +38,8 @@ public class MusicService extends Service
     }
 
 
-
-    public void onStart(Intent intent, int startId)
-    {
-        super.onStart(intent, startId);
+    public int onStartCommand( Intent intent, int flags,  int startId){
+        int res=super.onStartCommand(intent,flags,startId);
         //player= MediaPlayer.create(this, R.raw.test);//bug,
         try {
             player.prepare();
@@ -51,6 +49,7 @@ public class MusicService extends Service
         }
         player.start();
         // stopSelf();//调用onDestroy()
+        return res;
     }
 
     public void onDestroy()

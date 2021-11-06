@@ -1,0 +1,147 @@
+<html> 
+	<head> 
+	<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css" />
+		<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+		<script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
+		<!-- jquery.mobile-1.4.5 不支持jQuery-3  -->
+</head>
+<body>
+ 
+		<div class="ui-field-contain">
+		    <label for="select-custom-3">Icon left:</label>
+		    <select name="select-custom-3" id="select-custom-3" data-native-menu="false" data-iconpos="left">
+		        <option value="1">The 1st Option</option>
+		        <option value="2">The 2nd Option</option>
+		        <option value="3">The 3rd Option</option>
+		        <option value="4">The 4th Option</option>
+		    </select>
+		</div>
+
+
+		<div data-role="controlgroup" data-type="horizontal" data-mini="true">
+		    <a href="#" data-role="button" data-icon="plus" data-theme="b">Add</a>
+		    <a href="#" data-role="button" data-icon="delete" data-theme="b">Delete</a>
+		    <a href="#" data-role="button" data-icon="grid" data-theme="b">More</a>
+		</div>
+		
+		
+		<div data-role="controlgroup" data-type="horizontal" data-mini="true">
+			<!-- data-iconpos="notext" 不显示文本的按钮组-->
+		    <a href="#" data-role="button" data-iconpos="notext" data-icon="plus" data-theme="b">Add</a> 
+		    <a href="#" data-role="button" data-iconpos="notext" data-icon="delete" data-theme="b">Delete</a>
+		    <a href="#" data-role="button" data-iconpos="notext" data-icon="grid" data-theme="b">More</a>
+		</div>
+		
+		<!-- data-corners="false" , data-shadow="true" -->
+		<a href="#" data-role="button" data-icon="gear" data-theme="b">Default</a>
+		<a href="#" data-role="button" data-icon="gear" data-corners="false" data-theme="b">No rounded corners</a>
+		
+		
+		<!-- class="ui-disabled" -->
+		<a href="#" data-role="button" class="ui-disabled">Disabled anchor via class</a>
+	    <button disabled="">Button with disabled attribute</button> <!-- disabled="" -->
+	    <input type="button" disabled="" value="Input with disabled attribute"  >
+		
+		
+
+<a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Left</a>
+<a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-right">Right</a>
+<a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-top">Top</a>
+<a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-bottom">Bottom</a>
+<a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-notext">Icon only</a>
+		
+		
+<div class="ui-nodisc-icon"><!-- Class added to the wrapper -->
+    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-b ui-btn-inline">Delete</a>
+    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a>
+    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Minus</a>
+    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-b ui-btn-inline">Check</a>
+</div>	
+<div class="ui-alt-icon"><!-- Class added to the wrapper -->
+    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-inline">Delete</a>
+    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-inline">Plus</a>
+    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-inline">Minus</a>
+    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
+</div>
+
+<!-- data-inline="true" 按钮长度是文本的长度, data-icon="back" 在按钮左显示返回图标
+			其它图标有plus ,minus ,delete,arrow-l,arrow-r,arrow-u,arrow-d,check ,gear(齿轮)
+			,refresh,forward,back ,grid ,star ,alert ,info ,home ,search,bars ,edit 
+			-->
+			
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">action</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert">alert</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-d">arrow-d</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-d-l">arrow-d-l</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-d-r">arrow-d-r</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-l">arrow-l</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-r">arrow-r</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-u">arrow-u</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-u-l">arrow-u-l</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-u-r">arrow-u-r</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-audio">audio</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">back</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars">bars</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bullets">bullets</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-calendar">calendar</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-camera">camera</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-d">carat-d</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l">carat-l</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-r">carat-r</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-u">carat-u</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-check">check</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-clock">clock</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-cloud">cloud</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-comment">comment</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-delete">delete</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-edit">edit</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-eye">eye</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-forbidden">forbidden</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-forward">forward</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-gear">gear</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-grid">grid</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-heart">heart</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">home</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">info</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location">location</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-lock">lock</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-mail">mail</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-minus">minus</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-navigation">navigation</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone">phone</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-plus">plus</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-power">power</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-recycle">recycle</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-refresh">refresh</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">search</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-shop">shop</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-star">star</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-tag">tag</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user">user</button>
+<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-video">video</button>
+ 
+ 
+ 
+		
+		
+		
+		<a href="#"  class="ui-icon-nodisc"   data-role="button" data-iconshadow="true"	data-theme="b" data-icon="arrow-r"   >my</a>
+		
+		<!--默认主题色,    data-theme="a" 灰色  , b 黑色 -->
+		<a href="#" 				  data-theme="a"	data-role="button" data-icon="home"  data-inline="true">data-thme a    xxxx</a>
+		<a href="#" 				  data-theme="b"	data-role="button" data-icon="home"  data-inline="true">data-thme b</a>
+		
+	
+		<!-- 如果多于5个,就会一行显示两个,否则显示在一行上(于 data-grid="c"也有关) ,可用于header,footer中-->
+		<div data-role="navbar" class="ui-body-d ui-body"> <!--  data-role="navbar" class="ui-body-d ui-body" 使用d主题-->
+		    <ul>
+		        <li><a href="#" class="ui-btn-active">One</a></li> <!-- class="ui-btn-active" -->
+		        <li><a href="#">Two</a></li>
+		        <li><a href="#">Three</a></li>
+		       	<li ><a href="#" data-icon="arrow-r" data-theme="e">Four</a></li>
+		    </ul>
+		</div>
+
+</body>
+</html>	

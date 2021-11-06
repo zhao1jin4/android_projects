@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources> 
     <string name="hello">Hello World, DownloadActivity!</string>
     <string name="app_name">多线程下载器</string>
     <string name="downloadpath">下载路径</string>

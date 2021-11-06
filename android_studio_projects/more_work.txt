@@ -1,0 +1,15 @@
+ 
+
+Junit androidTest包下不能运行
+NDK 升级
+Cordova 升级
+
+Real 权限问题？？
+Real CameraAPI过时
+
+ThirdLib 扫二维码/条形码
+ThirdLib oauth2
+A_ToastNotification 新版本 不能振动，发音，音乐了
+WebView ,JS不正常工作，九宫格没做
+A_Widget_Preview 不能运行
+A_WidgetUI    有过时API,有闪退的情况

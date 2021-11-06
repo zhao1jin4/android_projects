@@ -1,0 +1,5 @@
+.gradle/
+.idea/
+#libs
+build/
+node_modules/

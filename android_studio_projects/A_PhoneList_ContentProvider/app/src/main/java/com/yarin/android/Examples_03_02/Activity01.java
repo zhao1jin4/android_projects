@@ -3,8 +3,10 @@ package com.yarin.android.Examples_03_02;
 
 import java.util.Calendar;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
@@ -14,6 +16,8 @@ import android.provider.CallLog;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.TextView;
+
+import androidx.core.app.ActivityCompat;
 
 public class Activity01 extends Activity
 {
@@ -39,7 +43,11 @@ public class Activity01 extends Activity
 		String string = "";
 		super.onCreate(savedInstanceState);
 
-
+		//动态申请权限
+		if(ActivityCompat.checkSelfPermission(Activity01.this, Manifest.permission.READ_CONTACTS)!= PackageManager.PERMISSION_GRANTED)
+		{
+			ActivityCompat.requestPermissions(Activity01.this,new String[]{Manifest.permission.READ_CONTACTS},1);
+		}
 		//联系人存放在/data/data/com.android.providers.contacts/databases/contacts2.db文件中的raw_contacts和data表中
 		ContentResolver contentResolver = getContentResolver();
 		Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);  //能得到ID,和名字,因只查raw_contacts表

@@ -1,0 +1,135 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta charset="utf-8">
+	<!-- 
+	 target-densitydpi=device-dpi"
+	 -->
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"  />
+
+	<link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css" />
+	<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
+		<!-- jquery.mobile-1.4.5 不支持jQuery-3  -->
+	
+	<style>
+		#chat:after   { background:  url("../img/glyphish-icons/09-chat2.png") 50% 50% no-repeat; background-size: 24px 22px; }
+		#email:after  { background:  url("../img/glyphish-icons/18-envelope.png") 50% 50% no-repeat; background-size: 24px 16px;  }
+		#login:after  { background:  url("../img/glyphish-icons/30-key.png") 50% 50% no-repeat;  background-size: 12px 26px; }
+		#beer:after   { background:  url("../img/glyphish-icons/88-beermug.png") 50% 50% no-repeat;  background-size: 22px 27px; }
+		#coffee:after { background:  url("../img/glyphish-icons/100-coffee.png") 50% 50% no-repeat;  background-size: 20px 24px; }
+		#skull:after  { background:  url("../img/glyphish-icons/21-skull.png") 50% 50% no-repeat;  background-size: 22px 24px; }
+	</style>
+	<script type="text/javascript">
+		function showImageLoading(obj)
+		{
+			 var html =$( obj ).jqmData("html");//得到标签中data-html设置的值
+				$.mobile.loading( 'show', {
+					html: html,
+					textVisible: true,
+					textonly:false,
+					theme: 'b'
+				});
+		}
+	 
+		function loadPage(url)
+		{
+			//$.mobile.loading( 'show', { theme: "b", text: "foo", textonly: true });
+			$.mobile.loading( 'show', {
+				//html: "<font color='red'>这是HTML格式的</font>",
+				html: "",//如有text的值,这个要为空
+				text: '正在加载页...',//加载界面的提示文本
+				textVisible: true,
+				textonly:false,
+				theme: 'b'
+			});
+			$('#divContent').text("");
+			$('#divContent').load(url,function() {
+				$.mobile.loading( 'hide' );
+			});
+		}
+	</script>
+</head> 
+<body> 
+
+<div data-role="page">
+	<div data-role="header" data-theme="b" data-position="fixed">
+		<a href="jQueryIndex.html" data-icon="home" data-theme="a">Home</a> <!-- 是按钮 -->
+	    <h1>jQueryMobile </h1>
+	    <a href="#popupMenu" data-rel="popup"  class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-gear ui-btn-icon-left ui-btn-a">设置...</a>
+		<div data-role="popup" id="popupMenu" data-theme="b" >
+	        <ul data-role="listview"  style="min-width:80px;">
+	            <li><a href="#" data-role="button">滚动,位置,闪动???</a></li>
+	            <li><a href="#" data-role="button">Edit</a></li>
+	            <li><a href="#" data-role="button">Disable</a></li>
+	            <li><a href="#" data-role="button">Delete</a></li>
+	        </ul>
+		</div> <!-- jQuery加载页后, 不能点了,原因是用jQuery加载的页,有重复的jqueryMobile.js -->
+
+	</div>
+	
+	<div data-role="content" id="divContent">
+	
+		<button onclick="showImageLoading(this)" class="show-page-loading-msg" data-theme="b" data-textonly="true" data-textvisible="true" data-msgtext="Custom Loader" data-inline="true" 
+			data-html="<span class='ui-bar ui-shadow ui-overlay-d ui-corner-all'>
+							<img src='../img/jquery-logo.png'>
+							<h2>is loading for you ...</h2>
+						</span>"
+			 data-iconpos="right">Custom HTML</button>
+
+		<button class="hide-page-loading-msg" data-inline="true" data-icon="delete" onclick="$.mobile.loading( 'hide' );">Hide</button>
+
+		<br/>
+		<br/>
+		
+		
+		<ul data-role="listview">
+			<!--  fade,pop,flip,turn,flow,slidefade,slide,slideup,slidedown,none -->
+			
+			<br/> jQuery加载
+			<li><a href="form.html" data-transition="slideup">slideup 跳转到  form </a></li>
+			<li><a href="button.html" data-transition="slidedown">slidedown 跳转到   button</a></li>
+			
+			<br/> 正常
+			<li><a href="table.html" data-rel="dialog" data-transition="turn">turn 跳转到   table.html</a></li>
+			<li><a href="listview.html" data-rel="dialog" data-transition="flip">flip 跳转到 listview</a></li>
+			<li><a href="collapse.html" data-rel="dialog" data-transition="pop">pop 跳转到  collapse</a></li>
+			<li><a href="popup.html" data-transition="slide">slide 跳转到  popup  </a></li>
+			
+			<br/> 空的
+		    <li><a href="grid.html" data-transition="pop">pop 跳转到   grid</a></li>
+		    
+		    <br/>问题,真机运行不一样的
+			<li><a href="swap.html" data-transition="flip">flip 跳转到 swap　　找JS位置不对 ??</a></li>
+			<li><a href="panel.html"   data-transition="fade">fade 跳转到panel 浏览器有时不行  </a></li>
+			<li><a href="multi_page.html" data-transition="pop">pop 跳转到  multi_page</a></li>
+			<li><a href="dialog.html" data-transition="pop">pop 跳转到  dialog</a></li>
+			
+		   
+			<!--data-role="panel" 
+		 	data-position="left" ,可right
+			data-display="overlay" 浮上面,reveal 从左->右出现,push 从右->左出现(连接的)-->
+			
+			
+		</ul>
+				
+		
+		
+	</div> <!-- content  end-->
+	
+	
+	<div data-role="footer"   data-theme="b" data-position="fixed">
+	    <div data-role="navbar"   data-grid="d">
+	    <ul>
+	    	<!-- data-icon="custom" 自定义图标方式,使用css -->
+	        <li><a href="#" onclick="loadPage('button.html');" id="chat" data-icon="custom">进入button</a></li>
+	        <li><a href="#" onclick="loadPage('form.html');" id="email" data-icon="custom">进入form</a></li>
+	        <li><a href="#"  id="skull" data-icon="custom" >xxxxx</a></li>
+	        <li><a href="#" id="beer" data-icon="custom">Beer</a></li>
+	        <li><a href="#" id="coffee" data-icon="custom">Coffee</a></li>
+	    </ul>
+	    </div>
+	</div> <!-- footer end -->
+</div> <!--  page  end-->
+</body>
+</html>

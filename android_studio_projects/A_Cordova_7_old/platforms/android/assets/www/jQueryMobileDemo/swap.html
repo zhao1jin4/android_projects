@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css" />
+	<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- jquery.mobile-1.4.5 不支持jQuery-3  -->
+
+	
+	<script type="text/javascript">
+
+	 
+	  function out(txt)
+	    {
+		  alert(txt);
+	    	var pre=document.getElementById("textOut").innerHTML;
+	    	document.getElementById("textOut").innerHTML=pre+"<br/>"+txt;
+	    }
+	
+	// 为什么在index.html中找initSwap？？？ 　　
+	//放　index.js中　和加	 app.initialize();都没用
+	
+　function　initSwap() {  
+	alert("start---"); 
+try{
+			  
+out("---start ");	 
+		//触摸三事件touchstart,touchend,touchmove 
+		//多点触击涉及到三个事件：gesturestart、gesturechange、gestureend
+		var element=document.getElementById("transformImg");
+			
+		var transform = {
+			  x: 0,
+			  y: 0,
+			  rotation: 0,
+			  scale: 1
+			};
+		
+			var startX;
+			var startY;
+			var touching = false;
+			element.addEventListener("touchstart", function(e){
+out("touchstart");
+			  e.preventDefault();
+			  startX = e.targetTouches[0].clientX;
+			  startY = e.targetTouches[0].clientY;
+			  touching = true;
+			},false);
+out("---1 ");		
+			element.addEventListener("touchmove", function(e){
+				out("touchmove");
+				  e.preventDefault();
+				  if (!touching) return;
+				  transform.x += e.targetTouches[0].clientX - startX;
+				  transform.y += e.targetTouches[0].clientY - startY;
+				  updateTransform();
+				  startX = e.targetTouches[0].clientX;
+				  startY = e.targetTouches[0].clientY;
+				});
+out("---2 ");			
+			element.addEventListener("touchend", function(e){
+out("touchend");
+				  e.preventDefault();
+				  touching = false;
+			});
+				
+				
+				var updateTransform = function(){
+					  element.style.webkitTransform =
+					    "translate(" + transform.x + "px, " + transform.y + "px) " +
+					    "rotate(" + transform.rotation + "deg) " +
+					    "scale(" + transform.scale + ")";
+					}
+		
+				
+				var startRotation;
+				var startScale
+				var gesturing = false;
+
+				element.addEventListener("gesturestart", function(e){
+out("gesturestart");
+				  e.preventDefault();
+				  startRotation = transform.rotation;
+				  startScale = transform.scale;
+				  gesturing = true;
+				});
+
+				element.addEventListener("gesturechange", function(e){
+out("gesturechange");
+				  e.preventDefault();
+				  if (!gesturing) return;
+				  transform.rotation = startRotation + e.rotation;
+				  transform.scale = startScale * e.scale;
+				  updateTransform();
+				});
+
+				element.addEventListener("gestureend", function(e){
+out("gestureend");
+				  e.preventDefault();
+				  gesturing = false;
+				});
+				
+ out("finished!");
+}catch(e)
+{
+	alert(e);
+	out(e);
+}
+
+}
+		
+    </script>
+	<style> 
+    </style>
+</head>
+<body> 
+
+<div data-role="page">
+	<div data-role="header" data-theme="b" data-position="fixed">
+		<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext" onclick="history.back();">  返回</button>
+	    <h1> 测试 </h1>
+	</div>
+	<div data-role="content" id="divContent">
+			
+			<div id="textOut" style="width:300px;height:100px;border:1px solid #FF0000;overflow:scroll">waiting log</div>
+			<button type="button" onclick="initSwap();">init</button>
+			要实现list一个动态加载,list滑动出现删除,和淘宝本地翻页
+			<img id="transformImg" alt="" src="../img/logo.png" style="position:absolute;z-index=2">
+			
+	</div> <!-- content  end-->
+	
+</div> <!--  page  end-->
+
+
+</body>
+</html>

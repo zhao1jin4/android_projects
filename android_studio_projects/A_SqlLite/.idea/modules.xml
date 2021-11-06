@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/A_SqlLite.iml" filepath="$PROJECT_DIR$/A_SqlLite.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sqlite1/sqlite1.iml" filepath="$PROJECT_DIR$/sqlite1/sqlite1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sqlite2/sqlite2.iml" filepath="$PROJECT_DIR$/sqlite2/sqlite2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/A_SqlLite.iml" filepath="$PROJECT_DIR$/.idea/modules/A_SqlLite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sqlite1/A_SqlLite.sqlite1.iml" filepath="$PROJECT_DIR$/.idea/modules/sqlite1/A_SqlLite.sqlite1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sqllite2/A_SqlLite.sqllite2.iml" filepath="$PROJECT_DIR$/.idea/modules/sqllite2/A_SqlLite.sqllite2.iml" />
     </modules>
   </component>
 </project>

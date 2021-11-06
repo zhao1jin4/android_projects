@@ -13,7 +13,7 @@
     <EditText  
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
-	    android:text="http://net.itcast.cn/QQWubiSetup.exe"
+	    android:text="https://download-ssl.firefox.com.cn/releases/mobile/93.2/zh-CN/Firefox-Android-93.2.apk"
 	    android:id="@+id/downloadpath"
 	    />
 	

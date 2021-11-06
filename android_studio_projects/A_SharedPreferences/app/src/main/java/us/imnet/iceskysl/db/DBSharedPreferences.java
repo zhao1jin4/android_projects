@@ -24,7 +24,8 @@ public class DBSharedPreferences extends Activity {
         field_name = (EditText) findViewById(R.id.name);
         filed_pass = (EditText) findViewById(R.id.password);
         // Restore preferences
-        SharedPreferences settings = getSharedPreferences(SETTING_INFOS, Context.MODE_WORLD_READABLE);//Context.MODE_PRIVATE
+        SharedPreferences settings = getSharedPreferences(SETTING_INFOS, Context.MODE_PRIVATE);//创建模式
+        		//MODE_WORLD_READABLE 过时 ，不存在创建
 		String name = settings.getString(NAME, "");//default
 		String password = settings.getString(PASSWORD, "");
 		//Set value
@@ -36,7 +37,7 @@ public class DBSharedPreferences extends Activity {
     @Override
     protected void onStop(){
         super.onStop();
-		SharedPreferences settings = getSharedPreferences(SETTING_INFOS, MODE_WORLD_READABLE);//Context.MODE_PRIVATE
+		SharedPreferences settings = getSharedPreferences(SETTING_INFOS, Context.MODE_PRIVATE);
 		settings.edit()
 			.putString(NAME, field_name.getText().toString())
 			.putString(PASSWORD, filed_pass.getText().toString())

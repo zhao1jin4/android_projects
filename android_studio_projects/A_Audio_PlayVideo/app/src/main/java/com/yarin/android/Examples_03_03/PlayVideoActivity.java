@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.content.res.AssetFileDescriptor;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -110,18 +112,24 @@ public class PlayVideoActivity extends Activity {
 	private void play() throws IOException
 	{
 		mediaPlayer.reset();//重置为初始状态//After calling this method, you will have to initialize it again by setting the data source and calling prepare().
-		mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+//		mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);//8.0过时
+		AudioAttributes attributes=new AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_MOVIE).build();//CONTENT_TYPE_MUSIC,CONTENT_TYPE_MOVIE
+		mediaPlayer.setAudioAttributes(attributes);
+
 		/* 设置Video影片以SurfaceHolder播放 */
 		mediaPlayer.setDisplay(surfaceView.getHolder());
 
 		//Toast.makeText(this,"mp4_dir:"+Environment.getExternalStorageDirectory(),Toast.LENGTH_LONG).show();
 		// Environment.getExternalStorageDirectory() = /storage/emulated/0
 		// /storage/sdcard0/
-		File videoFile = new File("/storage/sdcard0/", "movie.mp4");//模拟器是在/mnt/sdcard
-
-		mediaPlayer.setDataSource(videoFile.getAbsolutePath());
+//		File videoFile = new File("/storage/sdcard0/", "movie.mp4");//模拟器是在/mnt/sdcard
+//		mediaPlayer.setDataSource(videoFile.getAbsolutePath());
 		//mediaPlayer.setDataSource(new FileInputStream(new File("/storage/sdcard0/bluetooth/movie.mp4.mp4")).getFD());//机内部存储
 
+
+		AssetFileDescriptor fd=getResources().openRawResourceFd(R.raw.movie);
+		mediaPlayer.setDataSource(fd.getFileDescriptor(),fd.getStartOffset(),fd.getLength());
 
 		mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {//构造器实例化MediaPlayer时这样调用
 			@Override
@@ -129,7 +137,7 @@ public class PlayVideoActivity extends Activity {
  				mediaPlayer.start();
 			}
 		});
-//		mediaPlayer.prepare();//MediaPlayer.create()的方式不要再调用prepare()
-		mediaPlayer.start();//播放 不行????
+		mediaPlayer.prepare();//MediaPlayer.create()的方式不要再调用prepare()
+		mediaPlayer.start();//播放
 	}
 }

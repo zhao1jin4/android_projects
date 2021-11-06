@@ -1,0 +1,143 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css" />
+		<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+		<script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
+		<!-- jquery.mobile-1.4.5 不支持jQuery-3  -->
+
+
+	
+</head> 
+<body> 
+<div data-role="page" id="one"> <!-- data-theme="b" ,a=灰色  b=黑色  -->
+	<div data-role="header"  data-theme="b" data-position="fixed">
+		<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-arrow-l ui-btn-icon-notext" onclick="history.back();">  返回</button>
+		<h1>popup</h1>
+	</div>
+ 
+	<div data-role="content" >	
+		 
+		 <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Basic Popup</a>
+		<div data-role="popup" id="popupBasic">
+		<p>This is a completely basic popup, no options set.</p>
+		</div>
+
+
+		<br/>
+		
+		 
+	
+		<a href="#popupNested" data-rel="popup" data-role="button" data-inline="true" data-icon="info" data-theme="b" data-transition="pop">Choose a creature...</a>
+		<div data-role="popup" id="popupNested" data-theme="none">
+			<!-- data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d"  -->
+		    <div data-role="collapsible-set" data-theme="b" data-content-theme="c" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+		        <div data-role="collapsible" data-inset="false">
+		            <h2>Farm animals</h2>
+		            <ul data-role="listview">
+		                <li><a href="#" data-rel="dialog">Chicken</a></li>
+		                <li><a href="#" data-rel="dialog">Sheep</a></li>
+		            </ul>
+		        </div>
+		        <div data-role="collapsible" data-inset="false">
+		            <h2>Pets</h2>
+		            <ul data-role="listview">
+		                <li><a href="#" data-rel="dialog">Cat</a></li>
+		                <li><a href="#" data-rel="dialog">Mouse</a></li>
+		            </ul>
+		        </div>
+		      </div>
+		</div>
+	
+		<br/>
+	
+	
+	
+		<a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Sign in</a>
+		<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+		    <form>
+		        <div style="padding:10px 20px;">
+		            <h3>Please sign in</h3>
+		            <label for="un" class="ui-hidden-accessible">Username:</label>
+		            <input name="user" id="un" value="" placeholder="username" data-theme="a" type="text">
+		            <label for="pw" class="ui-hidden-accessible">Password:</label>
+		            <input name="pass" id="pw" value="" placeholder="password" data-theme="a" type="password">
+		            <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
+		        </div>
+		    </form>
+		</div>
+		
+		
+		<br/>
+		
+				
+		<a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Right close button</a>
+		<a href="#popupCloseLeft" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Left close button</a>
+		<a href="#popupUndismissible" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Undismissible Popup</a>
+		<div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+		    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a> <!-- ui-btn-right -->
+		<p>I have a close button at the top right corner with simple HTML markup.</p>
+		</div>
+		<div data-role="popup" id="popupCloseLeft" class="ui-content" style="max-width:280px">
+		    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a> <!-- ui-btn-left -->
+		<p>I have a close button at the top left corner with simple HTML markup.</p>
+		</div>
+		<div data-role="popup" id="popupUndismissible" class="ui-content" style="max-width:280px" data-dismissible="false">  <!-- data-dismissible="false" -->
+		    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+		<p>I have the <code>data-dismissible</code> attribute set to <code>false</code>. I'm not closeable by clicking outside of me.</p>
+		</div>
+		
+		
+		<br/> 
+		<p id="position-header">location</p>
+		
+		
+		<!-- data-rel="popup" data-position-to="window"窗口中心 ,可是origin,可是#指定的位置 -->
+		<a href="#positionWindow" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window">Position to window</a>
+		<a href="#positionOrigin" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="origin">Position to origin</a>
+		<a href="#positionSelector" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="#position-header">Position to #position-header</a>
+		<div data-role="popup" id="positionWindow" class="ui-content" data-theme="a">
+		<p>I am positioned to the window.</p>
+		</div>
+		<div data-role="popup" id="positionOrigin" class="ui-content" data-theme="a">
+		<p>I am positioned over the origin.</p>
+		</div>
+		<div data-role="popup" id="positionSelector" class="ui-content" data-theme="a">
+		<p>I am positioned over the header for this section via a selector. If the header isn't scrolled into view, collision detection will place the popup so it's in view.</p>
+		</div>
+
+
+		
+	 
+		<br/>
+		
+
+		<a href="#transitionExample" data-transition="none" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">No transition</a> <!-- 多闪一次 -->
+		<a href="#transitionExample" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Pop</a>
+		<a href="#transitionExample" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Fade</a>
+		<a href="#transitionExample" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Flip</a>
+		<a href="#transitionExample" data-transition="turn" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Turn</a>
+		<a href="#transitionExample" data-transition="flow" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Flow</a> 
+		<a href="#transitionExample" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Slide</a>
+		<a href="#transitionExample" data-transition="slidefade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Slidefade</a>
+		<a href="#transitionExample" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Slide up</a>
+		<a href="#transitionExample" data-transition="slidedown" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup">Slide down</a>
+		<div data-role="popup" id="transitionExample" class="ui-content" data-theme="a">
+		<p>I'm a simple popup.</p>
+		</div>
+
+			
+	</div>
+	
+	<div data-role="footer" data-theme="b" data-position="fixed">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+				
+</body>
+</html>

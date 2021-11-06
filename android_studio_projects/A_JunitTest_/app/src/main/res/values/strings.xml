@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">A_JunitTest</string>
+    <string name="hello">Hello World, A_junitTestActivity!</string>
+</resources>

@@ -64,15 +64,21 @@ public class MainActivity extends Activity
     {
         public void onClick(View v)
         {
-            startService(new Intent("com.yarin.Android.MUSIC"));
-            // Activity01.this.bindService(new Intent("com.yarin.Android.MUSIC"), conn, flags);
+//            startService(new Intent("com.yarin.Android.MUSIC"));//新版本不行了 Service Intent must be explicit: Intent
+            Intent intent = new Intent(MainActivity.this,MusicService.class);
+            startService(intent);
+
+//            MainActivity.this.bindService(new Intent("com.yarin.Android.MUSIC"), conn, flags);
         }
     };
     private OnClickListener stop = new OnClickListener()
     {
         public void onClick(View v)
         {
-            stopService(new Intent("com.yarin.Android.MUSIC"));
+            Intent intent = new Intent(MainActivity.this,MusicService.class);
+            stopService(intent);
+
+//            stopService(new Intent("com.yarin.Android.MUSIC"));
 
 //             unbindService();
 //             bindService(service, conn, flags)

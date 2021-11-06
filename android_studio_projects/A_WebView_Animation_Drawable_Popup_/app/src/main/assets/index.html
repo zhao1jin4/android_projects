@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function show(jsonStr)  //这里不好调试,最好在外面测试好复制过来,有错误不会报出!!!!
+	{
+		var console=document.getElementById("console");
+		console.innerText="js收到的值:"+jsonStr;
+
+		try
+		{
+			var jsonObj=eval(jsonStr);
+			var table=document.getElementById("personTable");
+
+			for (var i=0;i<jsonObj.length;i++)
+			{
+				var tr=table.insertRow(table.rows.length);
+				var td1=tr.insertCell(0);
+				var td2=tr.insertCell(1);
+				var td3=tr.insertCell(2);
+
+				td1.innerHTML=jsonObj[i].id;
+				td2.innerHTML=jsonObj[i].name;
+				td3.innerHTML="<a href='javascript:myContact.call(\""+jsonObj[i].mobile+"\")'>"+jsonObj[i].mobile+"</a>";
+			}
+
+		}catch(e)
+		{
+			console.innerText=e;
+		}
+	}
+</script>
+</head>
+<body onload="javascript:myContact.queryAllContacts()"><!-- Java代码中的方法会调用show的JS方法 -->
+
+	<span style="color:red">log  my:</span>
+	<div style="color:red" id="console"></div>
+
+	<table id="personTable">
+		<tr>
+			<td>编号</td>
+			<td>姓名</td>
+			<td>手机号码</td>
+		</tr>
+	</table>
+	<a href="javascript:window.location.reload()" >刷新</a>
+</body>
+</html>

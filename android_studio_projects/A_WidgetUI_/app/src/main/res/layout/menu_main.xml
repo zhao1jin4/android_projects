@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/hello" />
+	
+	<Button android:id="@+id/button1"
+		android:layout_width="100px"
+		android:layout_height="wrap_content" android:text="按钮1" />
+	<Button android:id="@+id/btn_xmlMenu"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="进入使用XML做菜单" />
+	
+	<Button android:id="@+id/btn_popupMenu"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="点击弹出菜单"
+		android:onClick="showPopup" />
+	
+	<Button android:id="@+id/btn_actionModeMenu"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="点击进入测试action mode菜单"
+		android:onClick="showPopup" />
+</LinearLayout>

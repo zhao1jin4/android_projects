@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, DBSharedPreferences</string>
-    <string name="app_name">DB Shared Preferences Demo</string>
+    <string name="app_name">A_SharedPreferences</string>
 </resources>
