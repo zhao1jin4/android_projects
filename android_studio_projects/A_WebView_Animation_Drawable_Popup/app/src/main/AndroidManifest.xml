@@ -3,8 +3,9 @@
     package="org.zh.webview_sensor_drag_anim"
     android:versionCode="1"
     android:versionName="1.0" >
-
+<!--
     <uses-sdk android:minSdkVersion="29"  android:targetSdkVersion="31"/>
+    -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 仿问网络权限 -->

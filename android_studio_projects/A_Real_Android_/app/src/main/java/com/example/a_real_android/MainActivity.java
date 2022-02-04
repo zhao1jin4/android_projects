@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.core.content.FileProvider;
 
 import com.example.a_real_android.camera2.Camera2Activity;
 import com.example.a_real_android.old.CameraPhotoActivity;
@@ -108,7 +107,6 @@ public class MainActivity extends Activity
 			        		startActivity(intent);
 			        	}
 			        });
-		FileProvider x;
 		/*
 		https://www.cnblogs.com/guanxinjing/p/10940049.html
 

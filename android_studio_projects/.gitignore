@@ -1,5 +1,10 @@
+#.idea/ #如没有这个目录，下次不能打开项目报C:\Users\xx\AppData\Local\Temp\wrapper_init7.gradle' appears to be corrupted.
+		#原因为默认使用gradle-wrapper.properties ，这个文件没有
 .gradle/
-#.idea/
-#libs
 build/
 node_modules/
+
+local.properties
+gradle/
+gradlew
+gradlew.bat

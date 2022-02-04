@@ -5,13 +5,13 @@ Real
 	accelorate sensor 不能很好的移动物体
 	定时关机应该不行的 
 	蓝牙  会发送一个广播,???哪里收？？ 聊天未成功————————，传文件
- 
+	
 A_Widget_Call (不刷新时间？？点击无效？？)
 A_MyComponents (教程里的加自己的)  可能有过时API（dialog）
+A_Audio_PlayVideo 静音错误
 
-
-	
-
+sqlite2 ,但列表项显示不太全，样式问题
+a_webview_annotiona ,third_lib 文字很白(按钮背景，不随黑色主题变)，样式问题，（trandata正常）
 
 
 
@@ -21,8 +21,9 @@ Cordova没有成功运行
 网页滑动验证码
 
 ThirdLib 扫二维码/条形码
-ThirdLib oauth2
-
+ThirdLib oauth2 ，删oauth1
+		阿里的一键登录
+		
 wifi连接时出界面输入密码
 通话时显示界面
 android 打开新App功能如何做的

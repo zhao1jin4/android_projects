@@ -6,12 +6,7 @@
     >  <!--
         android:sharedUserId="android.uid.system"
        为关机  -->
-
-    <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="19" />
-
-
+  
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <!-- 如eclipse有报错,project -> clean
