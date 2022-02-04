@@ -28,9 +28,9 @@ public class SensorAcceleroActivity extends Activity
 	TextView txt;
 
 	ImageView img;
-//	  Bitmap mbitmapBall ;
-//	  Canvas mCanvas; 
-//	  Paint mPaint;
+	Bitmap mbitmapBall ;
+	Canvas mCanvas;
+	Paint mPaint;
 
 	//<uses-feature android:name="android.hardware.sensor.accelerometer"  android:required="true" />
 	//手机屏幕中心中原点,Z轴正方向是面向用户的,y轴正方向是向上(指向听筒),x轴正方向右, 和OpenGL一样的
@@ -46,6 +46,7 @@ public class SensorAcceleroActivity extends Activity
 
 		List<Sensor> deviceSensors = manager.getSensorList(Sensor.TYPE_ALL);//手机中所有支持的传敏器
 		//HuaWei支持三个,LIS3DH 3-axis Accelerometer, CM3602 Proximity sensor,CM3602 Light sensor
+		// RedMi9A支持14个
 		for(Sensor s : deviceSensors )
 		{
 			Log.e("---supported-sensor:",s.getName());
@@ -55,10 +56,10 @@ public class SensorAcceleroActivity extends Activity
 		txt=(TextView)this.findViewById(R.id.txtAccelerometer);
 		img.setKeepScreenOn(true);//不锁屏
 
-//        mbitmapBall =  BitmapFactory.decodeResource(SensorAcceleroActivity.this.getResources(), R.drawable.compass);
-//        mCanvas = new Canvas();
-//        mPaint = new Paint();
-//        mPaint.setColor(Color.WHITE);
+        mbitmapBall =  BitmapFactory.decodeResource(SensorAcceleroActivity.this.getResources(), R.drawable.compass);
+        mCanvas = new Canvas();
+        mPaint = new Paint();
+        mPaint.setColor(Color.WHITE);
 
 	}
 	protected void onResume()
@@ -78,10 +79,12 @@ public class SensorAcceleroActivity extends Activity
 	{
 		public void onAccuracyChanged(Sensor sensor, int accuracy)
 		{
+			System.out.println("MySensorListener onAccuracyChanged");
 		}
 		public void onSensorChanged(SensorEvent event)
 		{
 
+			System.out.println("MySensorListener onSensorChanged event.sensor.getType()="+event.sensor.getType());//1
 			switch (event.sensor.getType())
 			{
 				//官方示例代码
@@ -99,10 +102,12 @@ public class SensorAcceleroActivity extends Activity
 					linear_acceleration[0] = event.values[0] - gravity[0];
 					linear_acceleration[1] = event.values[1] - gravity[1];
 					linear_acceleration[2] = event.values[2] - gravity[2];
+
+
 					//---------
-//					 txt.setText(linear_acceleration[0]+","+linear_acceleration[1]+","+linear_acceleration[2]);
+					 txt.setText(linear_acceleration[0]+","+linear_acceleration[1]+","+linear_acceleration[2]);
 //					 //img
-//					 mCanvas.drawBitmap(mbitmapBall, linear_acceleration[0],linear_acceleration[1], mPaint);  
+					 mCanvas.drawBitmap(mbitmapBall, linear_acceleration[0],linear_acceleration[1], mPaint);//不能很好的移动物体
 					break;
 
 			}

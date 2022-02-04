@@ -7,6 +7,10 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH"/> <!-- 使用蓝牙的权限  -->
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/> <!--修改蓝牙操作的权限  -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> <!-- 定位权限 -->
@@ -24,6 +28,7 @@
 
     <!--要project-clean ,可能要得到root权限 android:sharedUserId="android.uid.system" 不行
     要系统 app才行
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
    <uses-permission android:name="android.permission.REBOOT"/>
    <uses-permission android:name="android.permission.DEVICE_POWER" />
@@ -56,22 +61,43 @@
         </activity>
 
 
-        <activity android:name=".SensorAcceleroActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".SensorProximityActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".SensorLightActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".SensorAcceleroActivity" android:screenOrientation="portrait" android:exported="true"></activity>
+        <activity android:name=".SensorProximityActivity" android:screenOrientation="portrait" android:exported="true"></activity>
+        <activity android:name=".SensorLightActivity" android:screenOrientation="portrait" android:exported="true"></activity>
 
-        <activity android:name=".DragActivity"></activity>
-        <activity android:name=".BlueToothActivity"></activity>
-        <activity android:name=".LocationActivity"></activity>
-        <activity android:name=".WiFiActivity"></activity>
-        <activity android:name=".VibrateActivity"></activity>
-        <activity android:name=".CameraRecordActivity"></activity>
-        <activity android:name=".CameraPhotoActivity"></activity>
-        <activity android:name=".PoweroffAlarmActivity"></activity>
-        <activity android:name=".opengl.OpenGLES20Basic"></activity>
+        <activity android:name=".DragActivity" android:exported="true"></activity>
+        <activity android:name=".BlueToothActivity" android:exported="true"></activity>
+        <activity android:name=".LocationActivity" android:exported="true"></activity>
+        <activity android:name=".WiFiActivity" android:exported="true"></activity>
+        <activity android:name=".VibrateActivity" android:exported="true"></activity>
 
-        <receiver android:name=".PoweroffReceiver"/>
-        <receiver android:name=".AlarmReceiver"/>
+        <activity android:name=".camera2.Camera2Activity" android:exported="true"></activity>
+
+        <activity android:name=".old.CameraRecordActivity" android:exported="true"></activity>
+        <activity android:name=".old.CameraPhotoActivity" android:exported="true"></activity>
+
+          <provider
+             android:authorities="com.example.a_real_android.provider"
+             android:name="androidx.core.content.FileProvider"
+             android:grantUriPermissions="true"
+             android:exported="false"
+             ><meta-data
+             android:name="android.support.FILE_PROVIDER_PATHS"
+             android:resource="@xml/my_path"/>
+         </provider>
+        <!-- provider 为老的Camara写文件用
+         authorities： 推荐的格式为  app的包名.fileProvider ，代码中有对应
+         grantUriPermissions：必须是true，表示授予 URI 临时访问权限
+         exported：必须是false
+         resource：中的@xxx   是我们接下来要添加的文件
+         -->
+        
+        
+        <activity android:name=".PoweroffAlarmActivity" android:exported="true"></activity>
+        <activity android:name=".opengl.OpenGLES20Basic" android:exported="true"></activity>
+
+        <receiver android:name=".PoweroffReceiver" android:exported="true"/>
+        <receiver android:name=".AlarmReceiver" android:exported="true"/>
     </application>
 
 </manifest>

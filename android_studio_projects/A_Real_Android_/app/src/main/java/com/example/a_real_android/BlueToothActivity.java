@@ -114,6 +114,12 @@ public class BlueToothActivity extends Activity
 					return;
 				}
 
+
+				//动态申请权限
+				if(ActivityCompat.checkSelfPermission(BlueToothActivity.this, Manifest.permission.BLUETOOTH_CONNECT)!= PackageManager.PERMISSION_GRANTED)
+				{
+					ActivityCompat.requestPermissions(BlueToothActivity.this,new String[]{Manifest.permission.BLUETOOTH_CONNECT},1);
+				}
 				if(! adapter.isEnabled())
 				{
 					Intent intent=new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);//有界面提示用户使用蓝牙设备,打开蓝牙权限请求,如选Yes也提示Visible on
@@ -135,6 +141,11 @@ public class BlueToothActivity extends Activity
 		{
 			public void onClick(View v)
 			{
+				//动态申请权限
+				if(ActivityCompat.checkSelfPermission(BlueToothActivity.this, Manifest.permission.BLUETOOTH_CONNECT)!= PackageManager.PERMISSION_GRANTED)
+				{
+					ActivityCompat.requestPermissions(BlueToothActivity.this,new String[]{Manifest.permission.BLUETOOTH_CONNECT},1);
+				}
 				Intent intent=new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);//可见的
 				intent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION,120);//可见时间,单位秒,最多300
 				startActivity(intent);//有Toast/(每次交互按钮允许或拒绝)提示用户开启时间
@@ -262,10 +273,10 @@ public class BlueToothActivity extends Activity
 				TelephonyManager tm = (TelephonyManager) BlueToothActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
 
 				//动态申请权限
-//				if(ActivityCompat.checkSelfPermission(BlueToothActivity.this, Manifest.permission.READ_PHONE_STATE)!= PackageManager.PERMISSION_GRANTED)
-//				{
-//					ActivityCompat.requestPermissions(BlueToothActivity.this,new String[]{Manifest.permission.READ_PHONE_STATE},1);
-//				}
+				if(ActivityCompat.checkSelfPermission(BlueToothActivity.this, Manifest.permission.READ_PHONE_STATE)!= PackageManager.PERMISSION_GRANTED)
+				{
+					ActivityCompat.requestPermissions(BlueToothActivity.this,new String[]{Manifest.permission.READ_PHONE_STATE},1);
+				}
 				//String meid=tm.getMeid();
 				String imei=tm.getImei();//IMEI ,要READ_PHONE_STATE权限
 				//String imei = tm.getDeviceId();//过时

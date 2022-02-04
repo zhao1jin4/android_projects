@@ -47,7 +47,14 @@ public class MainActivity extends Activity implements OnClickListener
         {
             setTitle("Waiting... Alarm=5");
             Intent intent = new Intent(MainActivity.this, MainReceiver.class);
-            PendingIntent p_intent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+
+            //Targeting S+ (version 31 and above) requires that one of FLAG_IMMUTABLE or FLAG_MUTABLE be specified when creating a PendingIntent.
+            //PendingIntent p_intent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+              PendingIntent p_intent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+
+
+
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(System.currentTimeMillis());
             calendar.add(Calendar.SECOND, 5);

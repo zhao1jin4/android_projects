@@ -27,10 +27,9 @@ public class SensorProximityActivity extends Activity
 		setContentView(R.layout.sensor_proximity);
 
 		manager=(SensorManager)getSystemService(SENSOR_SERVICE);
-		proxmity = manager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+		proxmity = manager.getDefaultSensor(Sensor.TYPE_PROXIMITY);//proximity 接近
 		listener=new MyProximitySensorListener();
 		List<Sensor> deviceSensors = manager.getSensorList(Sensor.TYPE_ALL);//手机中所有支持的传敏器
-		//HuaWei支持三个,LIS3DH 3-axis Accelerometer, CM3602 Proximity sensor,CM3602 Light sensor
 		for(Sensor s : deviceSensors )
 		{
 			Log.e("---supported-sensor:",s.getName());
@@ -61,9 +60,9 @@ public class SensorProximityActivity extends Activity
 			switch (event.sensor.getType())
 			{
 				case Sensor.TYPE_PROXIMITY:// 距离传感器,用于电话在耳边时,锁屏
-					float max=proxmity.getMaximumRange();//是9 ,就0或9两个值
-					txtPromity.setText("距离为:"+event.values[0]);//0或9
-					System.out.println("max距离为 :"+max);
+					float max=proxmity.getMaximumRange();
+					txtPromity.setText("距离为:"+event.values[0]);//值只有0或1
+					System.out.println("max距离为 :"+max);//1
 					break;
 
 			}

@@ -58,7 +58,9 @@ public class RecorderAudioService extends Service
 						recorder.setAudioSource(MediaRecorder.AudioSource.MIC);//从麦克风收集声音
 						recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
 						recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);//3gp
-						recorder.setOutputFile(getCacheDir().getAbsolutePath()+System.currentTimeMillis()+"recorder.arm.3gp");//可以OnDestroy时删除
+						recorder.setOutputFile(getCacheDir().getAbsolutePath()+System.currentTimeMillis()+"recorder.arm.3gp");
+						//getCacheDir();//文件会写在 /data/data/<package>/cache目录下,可以OnDestroy时删除
+						//在模拟器上路径变为 /data/user/0/<package>/cache
 						recorder.prepare();
 						recorder.start();
 

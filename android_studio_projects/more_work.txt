@@ -1,15 +1,34 @@
+
+A_ToastNotification  不能振动,不能灯光，有两相字串没用，影响不大
+Real 
+	CameraAPI过时
+	accelorate sensor 不能很好的移动物体
+	定时关机应该不行的 
+	蓝牙  会发送一个广播,???哪里收？？ 聊天未成功————————，传文件
  
+A_Widget_Call (不刷新时间？？点击无效？？)
+A_MyComponents (教程里的加自己的)  可能有过时API（dialog）
 
-Junit androidTest包下不能运行
-NDK 升级
-Cordova 升级
 
-Real 权限问题？？
-Real CameraAPI过时
+	
+
+
+
+
+Cordova 升级 
+Cordova没有成功运行
+九宫格解锁（在A_webView_Annotation_Drable_popup中）没做
+网页滑动验证码
 
 ThirdLib 扫二维码/条形码
 ThirdLib oauth2
-A_ToastNotification 新版本 不能振动，发音，音乐了
-WebView ,JS不正常工作，九宫格没做
-A_Widget_Preview 不能运行
-A_WidgetUI    有过时API,有闪退的情况
+
+wifi连接时出界面输入密码
+通话时显示界面
+android 打开新App功能如何做的
+长按应用图标出其它菜单 ，如支付宝
+
+行程码App
+华为真机root
+
+

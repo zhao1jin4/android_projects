@@ -63,7 +63,7 @@ public class PoweroffAlarmActivity extends Activity
 		        		    Intent intent = new Intent(context,PoweroffReceiver.class);
 		         		    PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0,intent,0);  //getService ,getBroadcast ,getActivity
 		        		    
-		         		    AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);  
+		         		    AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 		        		    alarm.set(AlarmManager.RTC,123123 , pendingIntent);   
 		        		 
 			        	}

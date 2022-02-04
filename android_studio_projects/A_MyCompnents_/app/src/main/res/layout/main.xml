@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+<LinearLayout
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<Button android:id="@+id/button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="这是button" />
+		
+	<Button android:id="@+id/text_view_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="TextView" />
+		
+	<Button android:id="@+id/edit_view_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="EditView" />
+		
+	<Button android:id="@+id/check_box_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="CheckBox" />
+		
+	<Button android:id="@+id/radio_group_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="RadioGroup" />
+		
+	<Button android:id="@+id/spinner_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="Spinner" />
+		
+	<Button android:id="@+id/auto_complete_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="AutoCompleteTextView" />
+	
+		<Button android:id="@+id/date_picker_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="DatePicker" />
+
+		<Button android:id="@+id/time_picker_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="TimePicker" />
+
+		<Button android:id="@+id/progress_bar_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="ProgressBar" />
+
+		<Button android:id="@+id/seek_bar_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="SeekBar" />
+
+		<Button android:id="@+id/rating_bar_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="RatingBar" />	
+		
+		<Button android:id="@+id/image_view_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="ImageView" />	
+ 
+ 		<Button android:id="@+id/image_button_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="ImageButton" />	
+
+ 		<Button android:id="@+id/image_show_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="ImageSwitcher (Gallery过时)"/>
+		
+		<Button android:id="@+id/hcrollViewButton" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="H ScrollView 替代Gallery"/>
+		
+		
+ 		 
+ 		
+ 		<Button android:id="@+id/tab_tag_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="TabTag View"/>	
+		
+ 	
+		
+ 		<Button android:id="@+id/grid_view_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="GridView"/>	
+		
+		<Button android:id="@+id/custom_view_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="Custom View"/>
+		
+		<Button android:id="@+id/text_switcher_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="text switcher"/>
+		
+			
+		
+		<Button android:id="@+id/zoom_control_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="Zoom Control"/>
+		
+		<Button android:id="@+id/matirx_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="Matrix Test"/>
+		
+		<Button android:id="@+id/menu_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="Menu Test"/>
+		
+		<Button android:id="@+id/dialog_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="dialog Test(过时,这个先不删，找新的方式)"/>
+		
+		<Button android:id="@+id/layout_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="layout Test"/>
+		
+		<Button android:id="@+id/listview_button" 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="list view  Test"/>
+
+		
+
+</LinearLayout>
+</ScrollView>

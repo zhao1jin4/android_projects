@@ -55,7 +55,8 @@ public class WiFiActivity extends Activity
 			public void onClick(View v)
 			{
 				WifiManager wifiManager=(WifiManager)WiFiActivity.this.getSystemService(Service.WIFI_SERVICE);
-				wifiManager.setWifiEnabled(true);
+				wifiManager.setWifiEnabled(true);//过时 Q及以上版本不可以修改wifi状态 ，总是返回false
+				// api-29开始过时，官网api没有说替代方案，不允许，为了安全吧
 				text.setText("设置启用状态");
 			}
 		});

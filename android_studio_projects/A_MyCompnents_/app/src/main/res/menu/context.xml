@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:id="@+id/context_item1" 
+	    	android:title="上下文菜单1"
+		app:showAsAction="never" />  <!-- 可"never" -->
+	
+	<item android:id="@+id/context_item2"
+	        android:title="上下文菜单2"
+		app:showAsAction="never">
+	</item>
+</menu>

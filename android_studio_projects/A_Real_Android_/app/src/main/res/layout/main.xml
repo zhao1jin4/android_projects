@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/vibrateButton"
         android:layout_centerHorizontal="true"
-        android:text="蓝牙测试_OK"
+        android:text="蓝牙测试_(聊天未成功)"
         tools:context=".MainActivity" />
            
     <Button
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/locationButton"
-        android:text="拍照_Mac模拟器上不能用_" />
+        android:text="老的 拍照_Mac模拟器上不能用_" />
     
     <Button
         android:id="@+id/cameraRecordButton"
@@ -73,15 +73,34 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/cameraPhotoButton"
-        android:text="录像_Mac模拟器上不能用_只能后摄像头" />
-    
-       <Button
-        android:id="@+id/sensorAcceleroButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/cameraRecordButton"
-        android:text="加速度" />
+        android:text="老的 录像_Mac模拟器上不能用_只能后摄像头" />
+
+
+
+	<Button
+		android:id="@+id/camera2PhotoButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@id/cameraRecordButton"
+		android:text="camera2_api_拍照_未成功_" />
+
+	<Button
+		android:id="@+id/camera2RecordButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@id/camera2PhotoButton"
+		android:text="camera2_api_录像_未做___" />
+
+
+	<Button
+		android:id="@+id/sensorAcceleroButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@id/camera2RecordButton"
+		android:text="加速度" />
 	
     <Button
         android:id="@+id/sensorLightButton"

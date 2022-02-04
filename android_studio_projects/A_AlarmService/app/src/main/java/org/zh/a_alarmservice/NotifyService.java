@@ -15,7 +15,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
-//NotifyService没用？？
+
 public class NotifyService extends Service {
 
 	private static final String TAG = "TestService";
@@ -85,9 +85,10 @@ public class NotifyService extends Service {
 		//在notificationManager中创建通知渠道
 		_nm.createNotificationChannel(notificationChannel);
 
+		//Targeting S+ (version 31 and above) requires that one of FLAG_IMMUTABLE or FLAG_MUTABLE be specified when creating a PendingIntent.
+		//PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
+		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_IMMUTABLE);
 
-		PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-			new Intent(this, MainActivity.class), 0);
 
 		Notification notification = new NotificationCompat.Builder(NotifyService.this, id)
 		//指定通知的标题内容

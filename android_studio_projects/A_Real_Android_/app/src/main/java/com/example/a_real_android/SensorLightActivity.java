@@ -32,7 +32,6 @@ public class SensorLightActivity extends Activity
 		light=manager.getDefaultSensor(Sensor.TYPE_LIGHT);//灯光
 
 		List<Sensor> deviceSensors = manager.getSensorList(Sensor.TYPE_ALL);//手机中所有支持的传敏器
-		//HuaWei支持三个,LIS3DH 3-axis Accelerometer, CM3602 Proximity sensor,CM3602 Light sensor
 		for(Sensor s : deviceSensors )
 		{
 			Log.e("---supported-sensor:",s.getName());

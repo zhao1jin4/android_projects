@@ -7,6 +7,11 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.core.content.FileProvider;
+
+import com.example.a_real_android.camera2.Camera2Activity;
+import com.example.a_real_android.old.CameraPhotoActivity;
+import com.example.a_real_android.old.CameraRecordActivity;
 import com.example.a_real_android.opengl.OpenGLES20Basic;
 
 public class MainActivity extends Activity
@@ -80,7 +85,9 @@ public class MainActivity extends Activity
 			        		intent.setClass(MainActivity.this, VibrateActivity.class);
 			        		startActivity(intent);
 			        	}
-			        });   
+			        });
+
+
         Button cameraPhotoButton = (Button) findViewById(R.id.cameraPhotoButton);
         cameraPhotoButton.setOnClickListener(new Button.OnClickListener() 
 			        {
@@ -101,6 +108,40 @@ public class MainActivity extends Activity
 			        		startActivity(intent);
 			        	}
 			        });
+		FileProvider x;
+		/*
+		https://www.cnblogs.com/guanxinjing/p/10940049.html
+
+			https://developer.android.google.cn/training/camera2/capture-sessions-requests?hl=zh-cn
+
+			https://github.com/android/camera-samples/tree/master 示例 Camera2Basic 是kotlin ,很复杂
+			https://github.com/android/camera-samples/tree/master/CameraXBasic
+			*/
+
+		Button camera2PhotoButton = (Button) findViewById(R.id.camera2PhotoButton);
+		camera2PhotoButton.setOnClickListener(new Button.OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				Intent intent = new Intent();
+//				intent.setClass(MainActivity.this, Camera2PhotoActivity.class);
+				intent.setClass(MainActivity.this, Camera2Activity.class);
+
+				startActivity(intent);
+			}
+		});
+//		Button camera2RecordButton = (Button) findViewById(R.id.camera2RecordButton);
+//		camera2RecordButton.setOnClickListener(new Button.OnClickListener()
+//		{
+//			public void onClick(View v)
+//			{
+//				Intent intent = new Intent();
+//				intent.setClass(MainActivity.this, Camera2RecordActivity.class);
+//				startActivity(intent);
+//			}
+//		});
+
+
         Button sensorProximityButton = (Button) findViewById(R.id.sensorProximityButton);
         sensorProximityButton.setOnClickListener(new Button.OnClickListener() 
 			        {

@@ -86,7 +86,7 @@ public class TestServiceHolder extends Activity {
 
     private void startService() {
         Intent i = new Intent(this, TestService.class);
-        this.startService(i);
+        this.startService(i);//Android 8.0 不再允许后台service/receiver 直接通过startService方式去启动
         Toast.makeText(TestServiceHolder.this, "Toast.makeText", Toast.LENGTH_SHORT).show();
     }
 

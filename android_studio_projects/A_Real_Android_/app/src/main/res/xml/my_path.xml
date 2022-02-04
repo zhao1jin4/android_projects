@@ -1,0 +1,22 @@
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <cache-path name="myImg.png" path="."/>
+
+    <!--
+         <cache-path>    Context.getCacheDir()
+
+
+
+
+
+        <root-path>   设备的根目录 new File("/")
+
+        <files-path>    Context.getFileDir()
+
+        <external-path>     Environment.getExternalStorageDirectory()
+
+        <external-files-path>   Context.getExternalFilesDirs()
+
+        <external-catch-path>  Context.getExternalCatchDirs()
+    -->
+
+</paths>
