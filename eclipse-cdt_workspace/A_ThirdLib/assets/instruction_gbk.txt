@@ -1,6 +1,0 @@
-zxing_core-3.0.0-SNAPSHOT.jar		zxing ЖўЮЌТы
-signpost-core-1.2.1.2.jar			oauth
-signpost-commonshttp4-1.2.1.2.jar	oauth
-
-ksoap2-android-assembly-3.0.0-RC.4-jar-with-dependencies
-
