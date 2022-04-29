@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf8"> 
+    <title> </title>
+
+      <link rel="stylesheet" href="../css/my.css" />
+
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function out(txt)
+    {
+    	var pre=document.getElementById("textOut").innerHTML;
+    	document.getElementById("textOut").innerHTML=pre+"<br/>"+txt;
+    }
+    function showSplash( )
+    {
+    	 navigator.splashscreen.show();//config.xml中配置图片和时间
+    	 //window.setTimeout(hideSplash, 5000);
+    }
+    function hideSplash( )
+    {
+    	 navigator.splashscreen.hide();
+    }
+   
+  <!-- config.xml中加
+    <preference name="SplashScreenDelay" value="3000" />
+
+ --- platforms\android\app\src\main\assets\res\screen\android\config.xml
+(res是和www同级的)
+
+<platform name="android">
+	<!--
+        land short for landscape mode
+        port short for portrait mode
+         add the -night keyword in between the layout and size keywords of the image's density attribute value. E.g.: land-night-hdpi
+    -->
+    <splash src="res/screen/android/splash-port-hdpi.png" density="hdpi"/>
+    <splash src="res/screen/android/splash-port-ldpi.png" density="ldpi"/>
+    <splash src="res/screen/android/splash-port-mdpi.png" density="mdpi"/>
+    <splash src="res/screen/android/splash-port-xhdpi.png" density="xhdpi"/>
+    <splash src="res/screen/android/splash-port-xxhdpi.png" density="xxhdpi"/>
+
+    <!-- Landscape -->
+    <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi" />
+    <splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi" />
+    <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi" />
+    <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi" />
+    <splash src="res/screen/android/splash-land-xxhdpi.png" density="land-xxhdpi" />
+    <splash src="res/screen/android/splash-land-xxxhdpi.png" density="land-xxxhdpi" />
+
+    <!-- Portrait -->
+    <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi" />
+    <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi" />
+    <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi" />
+    <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi" />
+    <splash src="res/screen/android/splash-port-xxhdpi.png" density="port-xxhdpi" />
+    <splash src="res/screen/android/splash-port-xxxhdpi.png" density="port-xxxhdpi" />
+
+    <!-- Dark Mode -->
+    <splash src="res/screen/android/splash-land-night-hdpi.png" density="land-night-hdpi" />
+    <splash src="res/screen/android/splash-land-night-ldpi.png" density="land-night-ldpi" />
+    <splash src="res/screen/android/splash-land-night-mdpi.png" density="land-night-mdpi" />
+    <splash src="res/screen/android/splash-land-night-xhdpi.png" density="land-night-xhdpi" />
+    <splash src="res/screen/android/splash-land-night-xxhdpi.png" density="land-night-xxhdpi" />
+    <splash src="res/screen/android/splash-land-night-xxxhdpi.png" density="land-night-xxxhdpi" />
+
+    <splash src="res/screen/android/splash-port-night-hdpi.png" density="port-night-hdpi" />
+    <splash src="res/screen/android/splash-port-night-ldpi.png" density="port-night-ldpi" />
+    <splash src="res/screen/android/splash-port-night-mdpi.png" density="port-night-mdpi" />
+    <splash src="res/screen/android/splash-port-night-xhdpi.png" density="port-night-xhdpi" />
+    <splash src="res/screen/android/splash-port-night-xxhdpi.png" density="port-night-xxhdpi" />
+    <splash src="res/screen/android/splash-port-night-xxxhdpi.png" density="port-night-xxxhdpi" />
+</platform>
+   -->
+    </script>
+  </head>
+  <body>
+    <p id="textOut">waiting log</p>
+     
+     <button onclick="showSplash()">showSplash</button> <br/>
+       
+     <button onclick="hideSplash()">hideSplash</button> <br/>
+    
+     <button onclick="history.back()">go back</button>
+      
+  </body>
+</html>

@@ -14,9 +14,8 @@ sqlite2 ,但列表项显示不太全，样式问题
 a_webview_annotiona ,third_lib 文字很白(按钮背景，不随黑色主题变)，样式问题，（trandata正常）
 
 
-
-Cordova 升级 
-Cordova没有成功运行
+ 
+Cordova11 中部分没有成功运行
 九宫格解锁（在A_webView_Annotation_Drable_popup中）没做
 网页滑动验证码
 

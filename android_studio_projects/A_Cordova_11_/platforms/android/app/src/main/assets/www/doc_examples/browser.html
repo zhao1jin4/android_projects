@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf8"> 
+    <title> </title>
+
+    <link rel="stylesheet" href="../css/my.css" />
+
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function out(txt)
+    {
+    	var pre=document.getElementById("textOut").innerHTML;
+    	document.getElementById("textOut").innerHTML=pre+"<br/>"+txt;
+    }
+    
+	function myCallback(event){
+		 alert(event.url); 
+	}
+    function openBrowser(txt)
+     {
+       //使用默认浏览器新开
+    	var ref = window.open('http://apache.org', '_blank', 'location=yes');
+
+        //var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');//特别的浏览器，但打不开？？
+
+
+    	ref.addEventListener('loadstart', function(event) { alert(event.url); });//点新的链接时(不包含图片,JS,CSS)
+    	
+    	/*
+
+    	var ref = window.open('http://apache.org', '_blank', 'location=yes');
+    	var myCallback = function(event) { 
+	    		alert(event.url); 
+	    		ref.insertCSS({file: "mystyles.css"});
+	    		ref.executeScript({file: "myscript.js"});
+    		}
+    	ref.show();
+    	ref.addEventListener('loadstart', myCallback);
+    	ref.removeEventListener('loadstart', myCallback);
+    	ref.close();
+    	*/
+     }
+    </script>
+  </head>
+  <body>
+    <p id="textOut">waiting log</p>
+    
+     <button onclick="openBrowser()">openBrowser</button> <br/>
+      
+     <button onclick="history.back()">go back</button>
+      
+  </body>
+</html>

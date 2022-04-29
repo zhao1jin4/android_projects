@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf8"> 
+    <title> </title>
+
+      <link rel="stylesheet" href="../css/my.css" />
+ 
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function out(txt)
+    {
+    	var pre=document.getElementById("textOut").innerHTML;
+    	document.getElementById("textOut").innerHTML=pre+"<br/>"+txt;
+    }
+    function beginSingleVibrate()
+    {
+         // Vibrate for 3 seconds
+        navigator.vibrate(3000);
+    }
+    function beginPatternVibrate()
+    {
+         // Vibrate for 1 second
+        // Wait for 1 second
+        // Vibrate for 3 seconds
+        // Wait for 1 second
+        // Vibrate for 5 seconds
+        navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
+
+    }
+    function stopVibrate()
+    {
+    	navigator.vibrate(0);//取消
+
+    }
+    
+    </script>
+  </head>
+  <body>
+    <p id="textOut">waiting log</p>
+    
+    
+     <button onclick="beginSingleVibrate()">beginSingleVibrate</button> <br/>
+     <button onclick="beginPatternVibrate()">beginPatternVibrate</button> <br/>
+     <button onclick="stopVibrate()">stopVibrate</button> <br/>
+      
+     <button onclick="history.back()">go back</button>
+      
+  </body>
+</html>

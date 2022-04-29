@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf8"> 
+    <title> </title>
+      <link rel="stylesheet" href="../css/my.css" />
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function out(txt)
+    {
+    	var pre=document.getElementById("textOut").innerHTML;
+    	document.getElementById("textOut").innerHTML=pre+"<br/>"+txt;
+    }
+
+    function myErr(err) //可以查看源码JS文件
+    {
+        console.log("recordAudio():Audio Error: "+ err.code);
+		if(err.code==MediaError.MEDIA_ERR_ABORTED) //1
+			alert('MEDIA_ERR_ABORTED');
+		else if(err.code==MediaError.MEDIA_ERR_NETWORK)//2
+			alert('MEDIA_ERR_NETWORK');
+		else if(err.code==MediaError.MEDIA_ERR_DECODE)//3
+			alert('MEDIA_ERR_DECODE');
+		else if(err.code==MediaError.MEDIA_ERR_NONE_SUPPORTED)//4
+			alert('MEDIA_ERR_NONE_SUPPORTED');
+    }
+    function playAudio() {
+    	var url = "myrecording.mp3";
+        var my_media = new Media(url, function () { console.log("playAudio():Audio Success"); },myErr  );
+        my_media.play();
+        setTimeout(function () {
+            media.pause();
+        }, 10000);
+    }
+    function recordAudio() {
+        var src = "myrecording.mp3";
+        var mediaRec = new Media(src, //就是默认目录下,android是 /storage/sdcard0下 ,如已存在会覆盖
+            function() {  console.log("recordAudio():Audio Success");//I级别
+            		},myErr );
+        mediaRec.startRecord();
+        setTimeout(function() {
+            mediaRec.stopRecord();
+        }, 10000);
+    }
+    
+    </script>
+  </head>
+  <body>
+    <p id="textOut">waiting log</p>
+     
+       <button onclick="recordAudio()">recordAudio</button> <br/>
+       
+     <button onclick="playAudio()">playAudio</button> <br/>
+    
+     <button onclick="history.back()">go back</button>
+      
+  </body>
+</html>
